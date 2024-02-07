@@ -3,33 +3,28 @@
 Name: Yasir Khan
 
 # Assignment Description (in your own words)
-This project extract incidents data from Norman, Oklahoma Police department and print the nature of incidents and number of times they have occured.
+This project extract incidents data from Norman, Oklahoma Police department and save that in a sql database and print the nature of incidents and number of times they have occured.
 
 # How to install
 pipenv install
 
 ## How to run
-For running the project you can either run through 1 or 2
-1) pipenv run python assignment0/main.py --incidents <url>
-2) python assignment0/main.py --incidents <url>
+pipenv run ...
+![video](video)
 
-For running the testcase run using following command
-1) python -m unittest .\tests\test_download.py
-One can also run test case using pipenv
-
-I have attached the video is the docs folder
 
 ## Functions
-#### main.py \
-1) fetchIncidents(url) - This function takes URL as parameter and fetch the data from the URL. I am storing the data in the local directory and not saving at some file location. The reason is that my main objective is not to just only retreive data but to make a sql database which i can do by only storing in the local variable.
+1)  main.py - This is the main function of the project which invokes all other function
 
-2) extractincidents(incident_data) - This function takes fetched data as paramter and parse the table data from the pdf.
+2) fetchIncidents(url) - This function takes URL as parameter and fetch the data from the URL. I am storing the data in the local directory and not saving at some file location. The reason is that my main objective is not to just only retreive data but to make a sql database which i can do by only storing in the local variable.
 
-3) createdb(db_name, table_name) - This function takes the name of database, the name of table as parameter and craete a database with these values. The header name of the table is hard coded as we already know all the column header values
+3) extractincidents(incident_data) - This Python function, extractIncidents, takes a PDF file's binary data (incident_data) as input and uses pypdf to read the PDF. It iterates through each page, extracts text using layout mode, and concatenates the extracted text into a single string, which is then returned.
 
-4) populatedb(db_name, table_name, table_data) - This function takes the name of database, the name of table and the rows values and populate the table.
+4) createdb(db_name, table_name) - This Python function, createdb, creates a SQLite database (db_name) and a table (table_name). It establishes a connection, drops the table if it exists, and then creates a new table with specific column names. The function finally commits the changes and closes the connection. The header name of the table is hard coded as we already know all the column header values
 
-5) status(db_name, table_name) - This function takes database name, and the table name as parameter and print the nature of incidents and number of occurence of the incidents.
+5) populatedb(db_name, table_name, table_data) - This Python function, populatedb, inserts parsed data (data_lines) into a specified SQLite table (table_name) within a database (db_name). It connects to the database, prepares an SQL INSERT query with placeholders, and iteratively executes the query for each line of data, handling cases where the data lines have empty nature columns. Finally, it commits the changes and closes the connection.
+
+6) status(db_name, table_name) - This Python function, status, retrieves and prints the count of each unique value in the 'Nature' column from a specified SQLite table (table_name) within a database (db_name). It utilizes a SQL query to group and count incidents by nature, and then prints the nature and its corresponding count for each category. The output is formatted as "Nature|IncidentCount".
 
 ## Testings
 I am performing the unit testing using Mocking. The purpose of this mocking is to validate individual functions of code working as expected.
@@ -45,7 +40,18 @@ I am performing the unit testing using Mocking. The purpose of this mocking is t
 5) test_status - The test mocks the database connection and returns desired data. It captures the printed output of the status function and compares it to the expected string. This verifies that the function generates the correct output using mocked data 
 
 ## Database Development
+1) Create database using function createdb() 
+    - Establish a connection to an SQLite database named "normanpd.db" using the `sqlite3` module.
+    - Create a cursor to interact with the database.
+    - Define the name of the coulmns of the table and then execute sql statement to create table with that column name
 
+2) Insert elements in the database using function populatedb()
+    - Construct an SQL `INSERT` statement to insert the data into the incidents table.
+    - Execute the `INSERT` statement using the cursor and then commit the changes to the database.
+
+3) Print nature of incidents and counts using status()
+    - Execute an SQL query to get the count of incidents grouped by nature from the table
+    - Sort the results first by count (in descending order) and then alphabetically by nature.
 
 ## Bugs and Assumptions
 The assumptions is that not all column value for a particular row is empty. There is atleast one non-empty column value present for each row.
