@@ -9,8 +9,15 @@ This project extract incidents data from Norman, Oklahoma Police department and 
 pipenv install
 
 ## How to run
-pipenv run ...
-![video](video)
+For running the project you can either run through 1 or 2
+1) pipenv run python assignment0/main.py --incidents <url>
+2) python assignment0/main.py --incidents <url>
+
+For running the testcase run using following command
+1) python -m unittest .\tests\test_download.py
+The test case can also be run using pipenv
+
+I have attached the video recording in the docs folder
 
 
 ## Functions
