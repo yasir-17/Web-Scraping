@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a78b3afb846dbda3f3832aa565be94b13f49e49a1035e34722a4fae58f29e224"
+            "sha256": "8a2a663f40bad10674778c6aca002a77bd631a13ac9458236ee547f2cd3123e1"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,14 +16,17 @@
         ]
     },
     "default": {
-        "argparse": {
+        "pypdf": {
             "hashes": [
-                "sha256:62b089a55be1d8949cd2bc7e0df0bddb9e028faefc8c32038cc84862aefdd6e4",
-                "sha256:c31647edb69fd3d465a847ea3157d37bed1f95f19760b11a47aa91c04b666314"
+                "sha256:871badcfe335dd68b6b563aa7646288c6b86f9ceecffb21e86341261d65d8173",
+                "sha256:fe7c313c7e8074a516eae9d9df0111b7b9769f7a210479af7a342d27270ef81a"
             ],
             "index": "pypi",
-            "version": "==1.4.0"
-        },
+            "markers": "python_version >= '3.6'",
+            "version": "==4.0.1"
+        }
+    },
+    "develop": {
         "iniconfig": {
             "hashes": [
                 "sha256:2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3",
@@ -48,15 +51,6 @@
             "markers": "python_version >= '3.8'",
             "version": "==1.4.0"
         },
-        "pypdf": {
-            "hashes": [
-                "sha256:871badcfe335dd68b6b563aa7646288c6b86f9ceecffb21e86341261d65d8173",
-                "sha256:fe7c313c7e8074a516eae9d9df0111b7b9769f7a210479af7a342d27270ef81a"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.6'",
-            "version": "==4.0.1"
-        },
         "pytest": {
             "hashes": [
                 "sha256:249b1b0864530ba251b7438274c4d251c58d868edaaec8762893ad4a0d71c36c",
@@ -65,16 +59,6 @@
             "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==8.0.0"
-        },
-        "urllib3": {
-            "hashes": [
-                "sha256:051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20",
-                "sha256:ce3711610ddce217e6d113a2732fafad960a03fd0318c91faa79481e35c11224"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.8'",
-            "version": "==2.2.0"
         }
-    },
-    "develop": {}
+    }
 }

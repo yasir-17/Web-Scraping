@@ -1,4 +1,0 @@
-argparse
-urllib3
-pypdf
-pytest

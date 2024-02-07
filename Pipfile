@@ -4,12 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-argparse = "*"
-urllib3 = "*"
 pypdf = "*"
-pytest = "*"
 
 [dev-packages]
+pytest = ">=5.2"
+
 
 [requires]
 python_version = "3.11"
