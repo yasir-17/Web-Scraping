@@ -13,11 +13,14 @@ For running the project you can either run through 1 or 2
 1) pipenv run python assignment0/main.py --incidents <url>
 2) python assignment0/main.py --incidents <url>
 
-For running the testcase run using following command
-1) python -m unittest .\tests\test_download.py
+For running the testcase use either of the following command
+1) pipenv run python -m pytest
+2) pipenv run python -m unittest tests/test_download.py
+3) python -m unittest .\tests\test_download.py
 The test case can also be run using pipenv
 
-I have attached the video recording in the docs folder
+I have attached the video recording in the docs folder. But below is a gif attached
+![](docs/Recording%202024-02-08%20235815.mp4.gif)
 
 
 ## Functions

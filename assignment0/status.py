@@ -7,14 +7,7 @@ def status(db_name, table_name):
     con = sqlite3.connect(db_name)
     cur = con.cursor()
     
-    query = """
-        SELECT Nature, COUNT(*) AS IncidentCount
-        FROM {}
-        GROUP BY Nature
-        ORDER BY 
-            CASE WHEN Nature = '' THEN 1 ELSE 0 END, 
-            IncidentCount DESC,
-            Nature
+    query = """ SELECT Nature, COUNT(*) AS IncidentCount FROM {} GROUP BY Nature ORDER BY  IncidentCount DESC, Nature
     """.format(table_name)
     
     cur.execute(query)
