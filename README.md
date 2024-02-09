@@ -20,7 +20,7 @@ For running the testcase use either of the following command
 The test case can also be run using pipenv
 
 I have attached the video recording in the docs folder. But below is a gif attached
-![](https://github.com/yasir-17/cis6930sp24-assignment0/blob/main/docs/Recording%202024-02-08%20235815.mp4)
+![](https://github.com/yasir-17/cis6930sp24-assignment0/blob/main/docs/Recording%202024-02-08%20235815.gif)
 
 
 ## Functions
