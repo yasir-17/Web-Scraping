@@ -24,7 +24,7 @@ I have attached the video recording in the docs folder. But below is a gif attac
 
 
 ## Functions
-1)  main.py - This is the main function of the project which invokes all other function
+1)  main() - The main function in main.py controls the whole incident data processing procedure. It retrieves incident summaries from a URL, extracts important information, builds and populates a SQLite database, and finally publishes the nature and number of occurrences recorded in the database. Users can run the script by passing the incident summary URL as a command line input.
 
 2) fetchIncidents(url) - This function takes URL as parameter and fetch the data from the URL. I am storing the data in the local directory and not saving at some file location. The reason is that my main objective is not to just only retreive data but to make a sql database which i can do by only storing in the local variable.
 
@@ -64,4 +64,6 @@ I am performing the unit testing using Mocking. The purpose of this mocking is t
     - Sort the results first by count (in descending order) and then alphabetically by nature.
 
 ## Bugs and Assumptions
-The assumptions is that not all column value for a particular row is empty. There is atleast one non-empty column value present for each row.
+1) The assumptions is that not all column value for a particular row is empty. There is atleast one non-empty column value present for each row.
+2) The code assumes that the provided incident summary URL follows a specific format, containing relevant information in a tabular structure
+3) The code assumes that the incident summary URL allows for unlimited access to the data. It should not be password locked or have other access limitations.
